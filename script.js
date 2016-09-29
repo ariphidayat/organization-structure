@@ -28,7 +28,11 @@ var ul = $("#container");
 
 var buildTree = function(data) {
   for (var i = 0; i < data.length; i++) {
-    var htmlStr = "<li id='" + data[i].id + "'>" + data[i].name + "</li>";
+    var htmlStr = "<li id='" + data[i].id + "'>";
+    // var htmlStr = htmlStr + "<div>";
+    var htmlStr = htmlStr + "<div>" + data[i].name + "</div>";
+    // var htmlStr = htmlStr + "<div>";
+    var htmlStr = htmlStr + "</li>";
     var parent;
 
     if (data[i].parent_id === 0) {
@@ -46,3 +50,16 @@ var buildTree = function(data) {
 }
 
 buildTree(data);
+
+$('.tree li:has(ul)').addClass('parent').find(' > div').attr('title', 'Collapse');
+$('.tree li.parent > div').on('click', function (e) {
+    var children = $(this).parent('li.parent').find(' > ul > li');
+    if (children.is(":visible")) {
+        children.hide('fast');
+        $(this).attr('title', 'Expand');
+    } else {
+        children.show('fast');
+        $(this).attr('title', 'Collapse');
+    }
+    e.stopPropagation();
+});
