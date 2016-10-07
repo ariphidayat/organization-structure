@@ -1,48 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.tree {
+    margin:auto;
+}
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+}
 .tree li {
-    list-style-type:none;
-    margin:0;
-    padding:10px 5px 0 5px;
-    position:relative
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
 }
 .tree li::before, 
 .tree li::after {
     content:'';
-    left:-20px;
-    position:absolute;
-    right:auto
+    position: absolute;
+    top: 0;
+    right: 49%;
+    border-top: 1px solid #ccc;
+    width: 51%;
+    height: 20px;
 }
-.tree li::before {
-    border-left:1px solid #999;
-    bottom:50px;
-    height:100%;
-    top:0;
-    width:1px
+.tree li:after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
 }
-.tree li::after {
-    border-top:1px solid #999;
-    height:20px;
-    top:30px;
-    width:25px
+.tree li:only-child::after, 
+.tree li:only-child::before {
+    display: none;
 }
-.tree li div {
-    border:1px solid #999;
-    display:inline-block;
-    padding:8px 24px;
-    text-decoration:none
+.tree li:only-child {
+    padding-top: 0;
 }
-.tree li.parent > div {
-    cursor:pointer
-}
-.tree > ul > li::before,
-.tree > ul > li::after {
-    border:0
+.tree li:first-child::before, 
+.tree li:last-child::after {
+    border: 0 none;
 }
 .tree li:last-child::before {
-    height:30px
+    border-right: 1px solid #ccc;
 }
-.tree li.parent > div:hover, 
-.tree li.parent > div:hover + ul li div {
-    background:#f3f3f4;
-    border:1px solid #94a0b4;
-    color:#000
+.tree ul ul::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+.tree li div {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+}
+.tree li div:hover, 
+.tree li div:hover+ul li div {
+    background: #ddd;
+    border: 1px solid #94a0b4;
+}
+.tree li div:hover + ul li::after, 
+.tree li div:hover + ul li::before, 
+.tree li div:hover + ul::before, 
+.tree li div:hover + ul ul::before {
+    border-color: #94a0b4;
+}
+li div.just-line {
+    display: none;
+}
+div.just-line + ul {
+    padding-top: 45px;
+}
+div.just-line + ul:before {
+    height: 45px;
 }
