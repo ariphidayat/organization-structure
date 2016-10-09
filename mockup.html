@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Organization Structure</title>
-	<link href="style.css" rel="stylesheet">
+    <title>Organization Structure</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
-	<div class="tree">
-      <ul>
-        <li data-id="1">
-          <div>Board of Director</div>
-          <ul>
-            <li>
-              <div>Finance Division</div>
-              <ul>
-                <li>
-                  <div>Finance Department</div>
-                  <li>
-                    <div>Sales Department</div>
-                  </li>
-              </ul>
-              </li>
-              <li class="no-padding">
-                <div class="just-line"></div>
+    <div id="tree" class="tree">
+        <ul>
+            <li class="parent">
+                <div>Board of Director</div>
                 <ul>
-                  <li>
-                    <div>HR Division</div>
-                  </li>
+                    <li class="parent">
+                        <div>
+                          <span>Finance Division</span>
+                          <span class="action">
+                            <a class="btn btn-xs glyphicon glyphicon-trash" href="google.com"></a>
+                            <a class="btn btn-xs glyphicon glyphicon-edit" href=""></a>
+                            <a class="btn btn-xs glyphicon glyphicon-cog" href=""></a>
+                          </span>
+                        </div>
+                        <ul style="display: block;">
+                            <li>
+                                <div>
+                                  <span>Finance Department</span>
+                                  <span class="action">
+                                    <a class="btn btn-xs glyphicon glyphicon-trash" href="google.com"></a>
+                                    <a class="btn btn-xs glyphicon glyphicon-edit" href=""></a>
+                                    <a class="btn btn-xs glyphicon glyphicon-cog" href=""></a>
+                                  </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>Sales Department</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-padding parent">
+                        <div class="just-line"></div>
+                        <ul>
+                            <li>
+                                <div>HR Division</div>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-          </ul>
-          </li>
-      </ul>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+            </li>
+        </ul>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="mockup.js"></script>
 </html>

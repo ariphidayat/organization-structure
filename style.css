@@ -34,6 +34,24 @@
     text-decoration: none;
 }
 
+span.action {
+    display: none;
+}
+
+div:hover > span.action {
+    padding-left: 5px;
+    display: inline-block;
+}
+
+span.action > a {
+    padding: 0;
+    top: -1px;
+}
+
+span.action > a:hover {
+    color: red;
+}
+
 .tree li.parent > div {
     cursor: pointer;
 }
