@@ -26,10 +26,10 @@ var ul = document.createElement('ul');
 
 [tree].forEach(function iter(level) {
     return function(a) {
-        var li = document.createElement('li'),
-            div = document.createElement('div'),
-            ul,
-            l = level;
+        var li = document.createElement('li');
+        var div = document.createElement('div');
+        var ul;
+        var l = level;
 
         this.appendChild(li);
         while (++l < a.level) {
@@ -42,7 +42,30 @@ var ul = document.createElement('ul');
             ul.appendChild(li);
             div = document.createElement('div');
         }
-        div.appendChild(document.createTextNode(a.name));
+        var title = document.createElement('span');
+        title.className = "title";
+        title.appendChild(document.createTextNode(a.name));
+        div.appendChild(title);
+        
+        var action = document.createElement('span');
+        action.className = "action";
+        div.appendChild(action);
+
+        var setPosition = document.createElement('a');
+        setPosition.className = "btn btn-xs glyphicon glyphicon-cog";
+        setPosition.href = "position-link";
+
+        var modify = document.createElement('a');
+        modify.className = "btn btn-xs glyphicon glyphicon-edit";
+        modify.href = "modify-link";
+        
+        var del = document.createElement('a');
+        del.className = "btn btn-xs glyphicon glyphicon-trash";
+        del.href = "delete-link";
+
+        action.appendChild(setPosition);
+        action.appendChild(modify);
+        action.appendChild(del);
         li.appendChild(div);
 
         if (a.children) {
@@ -67,3 +90,4 @@ $('.tree li.parent > div').on('click', function(e) {
     }
     e.stopPropagation();
 });
+

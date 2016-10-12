@@ -39,17 +39,16 @@ span.action {
 }
 
 div:hover > span.action {
-    padding-left: 5px;
     display: inline-block;
 }
 
 span.action > a {
-    padding: 0;
     top: -1px;
+    line-height: 0;
 }
 
 span.action > a:hover {
-    color: red;
+    color: #e08e0b;
 }
 
 .tree li.parent > div {
@@ -67,9 +66,7 @@ span.action > a:hover {
 
 .tree li.parent > div:hover,
 .tree li.parent > div:hover + ul li div {
-    background: #f3f3f4;
-    border: 1px solid #94a0b4;
-    color: #000;
+    background: #f3f3f3;
 }
 
 li div.just-line {
@@ -77,8 +74,8 @@ li div.just-line {
 }
 
 div.just-line + ul > li::before {
-    padding: 0;
     border-left: 0;
+    padding: 0;
 }
 
 div.just-line + ul > li::after {
